@@ -1,0 +1,9 @@
+index:
+    path: /
+    controller: App\Controller\HomeController::index
+app_logout:
+    path: /logout
+    controller: App\Controller\DirectlogoutController::logout
+api_user:
+  path: /api/user
+  controller: App\Controller\Api\UserController::getUserInfo

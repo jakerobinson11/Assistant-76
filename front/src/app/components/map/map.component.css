@@ -1,0 +1,19 @@
+html, body, #map {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  #map {
+    height: 300px;
+    width: 600px;
+
+  }
+  .map-container {
+    width: 80%; 
+    height: 100px;
+    margin: auto;
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  

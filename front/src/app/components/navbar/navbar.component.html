@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="./logo.png" alt="Logo" width="130" height="60">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <!-- Proper Bootstrap dropdown structure -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="btnGroupDrop1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <li><a class="dropdown-item" href="#">Assistant personelle</a></li>
+            <li><a class="dropdown-item" href="#">Organisation de transport</a></li>
+            <li><a class="dropdown-item" href="#">Réservation de restaurants</a></li>
+            <li><a class="dropdown-item" href="#">Visites touristiques</a></li>
+            <li><a class="dropdown-item" href="#">Activités de plein air</a></li>
+            <li><a class="dropdown-item" href="#">Réservation d'hôtels</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Partenaires</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">À propos de nous</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:4200/profile">Profile</a>
+        </li>
+        <!-- <li class="nav-item">
+          <span class="navbar-text text-white">
+            Logged in as {{ user.firstName }}
+          </span>
+        </li> -->
+        <li class="nav-item">
+          <button class="btn btn-outline-light" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  

@@ -1,0 +1,47 @@
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center; 
+    gap: 20px;  
+    padding: 20px;
+}
+
+.card {
+    width: 100%; /* Full width within its column */
+    max-width: 350px; /* Limit max width */
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Ensure consistent height */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    flex-grow: 1; /* Ensures consistent height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to bottom */
+    padding: 20px;
+    text-align: center;
+}
+
+.card-text {
+    flex-grow: 1; /* Allows text to fill space */
+}
+
+/* Add spacing between rows */
+.row > .col-md-4 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
