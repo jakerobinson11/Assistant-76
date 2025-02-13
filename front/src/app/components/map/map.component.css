@@ -1,19 +1,18 @@
-html, body, #map {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  
-  #map {
-    height: 300px;
-    width: 600px;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
-  }
-  .map-container {
-    width: 80%; 
-    height: 100px;
-    margin: auto;
-    border: 1px solid #ccc; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
+#map-container {
+  width: 80%;
+  height: 750px; /* Increased height for better visibility */
+  margin: auto;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#map {
+  height: 100%; /* Ensures it fills the parent */
+  width: 100%;
+}

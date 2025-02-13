@@ -6,4 +6,4 @@ app_logout:
     controller: App\Controller\DirectlogoutController::logout
 api_user:
   path: /api/user
-  controller: App\Controller\Api\UserController::getUserInfo
+  controller: App\Controller\UserController::getUserInfo

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FavoriteService } from '../../services/favorite.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
@@ -9,16 +11,25 @@ import { RouterModule } from '@angular/router';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
-  // Your profile logic
-  favoris = {
-    restaurants: [{ nom: 'Le Gourmet' }, { nom: 'Bistro Parisien' }],
-    activitesTouristiques: [{ nom: 'Musée du Louvre' }, { nom: 'Tour Eiffel' }],
-    activitesPleinAir: [{ nom: 'Randonnée en forêt' }, { nom: 'Kayak sur la Seine' }],
-    hotels: [{ nom: 'Hôtel de Ville' }, { nom: 'Château Luxueux' }]
-  };
-  modifierProfil() {
-    console.log("Redirection vers la page de modification du profil...");
-    // Implémentez ici la navigation ou l'affichage du formulaire d'édition
+export class ProfileComponent implements OnInit {
+  favorites: any[] = [];
+
+  constructor(@Inject(PLATFORM_ID) private platformId: object, private favoriteService: FavoriteService) {}
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+    const storedIds = localStorage.getItem('ids');
+    const ids: string[] = storedIds ? JSON.parse(storedIds) : [];
+    // Afficher les IDs dans la console
+    console.dir(ids);
+    }
   }
-};
+
+  fetchFavorites(): void {
+    this.favoriteService.getFavorites().subscribe(favorites => {
+      this.favorites = favorites;
+    }, error => {
+      console.error('Error fetching favorites:', error);
+    });
+  }
+}

@@ -1,35 +1,14 @@
 <div class="profile-container">
     <div class="header">
       <h1>Mon Profil</h1>
-      <button class="edit-button" (click)="modifierProfil()">Modifier le profil</button>
+      <button class="edit-button">Modifier le profil</button>
     </div>
   
     <div class="favorites">
-      <h2>Mes Favoris</h2>
-  
-      <div class="category">
-        <h3>Restaurants</h3>
+        <h2>My Favorites</h2>
         <ul>
+          <li *ngFor="let favorite of favorites">{{ favorite.name }}</li>
         </ul>
       </div>
-  
-      <div class="category">
-        <h3>Activités Touristiques</h3>
-        <ul>
-        </ul>
-      </div>
-  
-      <div class="category">
-        <h3>Activités de Plein Air</h3>
-        <ul>
-        </ul>
-      </div>
-  
-      <div class="category">
-        <h3>Hôtels et Hébergements</h3>
-        <ul>
-        </ul>
-      </div>
-    </div>
   </div>
   

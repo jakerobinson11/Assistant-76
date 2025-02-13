@@ -52,6 +52,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $location;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Favorite::class, mappedBy="users", cascade={"persist", "remove"})
+     */
+    private $favorite;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -173,6 +178,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setLocation(int $location): self
     {
         $this->location = $location;
+
+        return $this;
+    }
+
+    public function getFavorite(): ?Favorite
+    {
+        return $this->favorite;
+    }
+
+    public function setFavorite(Favorite $favorite): self
+    {
+        // set the owning side of the relation if necessary
+        if ($favorite->getUsers() !== $this) {
+            $favorite->setUsers($this);
+        }
+
+        $this->favorite = $favorite;
 
         return $this;
     }

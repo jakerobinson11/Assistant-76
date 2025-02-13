@@ -1,6 +1,28 @@
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
 <div id="map-container">
-    <div id="map"style="height: 100%; width: 100%;"></div>
+    <div id="map"></div>
 </div>
+
+<!-- Dropdown for filtering places -->
+<div style="text-align: center; margin-top: 10px;">
+    <label for="filter">Choose a category:</label>
+    <select id="filter" (change)="onCategoryChange($event)">
+        <option value="restaurant">Restaurants</option>
+        <option value="cafe">Cafes</option>
+        <option value="bar">Bars</option>
+        <option value="hotel">Hotels</option>
+        <option value="tourism">Activités Touristiques</option>
+        <option value="park">Activités en Plein Air</option>
+    </select>
+</div>
+
+<!-- Input for city search -->
+<div style="text-align: center; margin-top: 10px;">
+    <label for="city-search">Search for a city:</label>
+    <input id="city-search" type="text" (input)="onCitySearch($event)" placeholder="Enter city name">
+</div>
+
+
